@@ -1,214 +1,126 @@
 <!DOCTYPE html>
 <html lang="pt-br">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>Catálogo de Perfumes</title>
-  <link rel="stylesheet" href="style.css" />
-  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700&display=swap" rel="stylesheet" />
-  <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
-  <script src="https://www.turnjs.com/lib/turn.min.js"></script>
-  <style>
-    body {
-      margin: 0;
-      font-family: 'Playfair Display', serif;
-      background-color: #d3d3d3;
-      color: #333;
-    }
-
-    header {
-      text-align: center;
-      padding: 30px 0;
-    }
-
-    h1 {
-      font-size: 2.5em;
-      margin-bottom: 10px;
-    }
-
-    h2 {
-      font-size: 1.2em;
-      font-style: italic;
-      color: #555;
-    }
-
-    .catalogo-wrapper {
-      display: flex;
-      justify-content: center;
-      margin: 30px 0;
-    }
-
-    .flipbook {
-      width: 1000px;
-      height: 650px;
-      transform: scale(1) !important;
-      transform-origin: center center !important;
-      perspective: 1500px;
-      
-    }
-
-    .pagina {
-      background-color: white;
-      width: 100%;
-      height: 100%;
-      padding: 50px;
-      box-sizing: border-box;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      box-shadow: none;
-      overflow: hidden;
-    }
-
-    .conteudo {
-      display: flex;
-      gap: 30px;
-      align-items: center;
-    }
-
-    .conteudo img {
-      max-width: 300px;
-      height: auto;
-      box-shadow: none;
-      border: none;
-      outline: none;
-    }
-
-    .texto {
-      max-width: 500px;
-    }
-
-    .texto h3 {
-      font-size: 2em;
-      margin-bottom: 15px;
-    }
-
-    .texto p {
-      font-size: 1.2em;
-      margin-bottom: 10px;
-    }
-
-    .preco {
-      font-weight: bold;
-      font-size: 1.4em;
-      color: #444;
-    }
-
-    .botao-navegacao {
-      position: fixed;
-      top: 50%;
-      transform: translateY(-50%);
-      font-size: 2em;
-      background-color: rgba(180, 180, 180, 0.9);
-      padding: 10px 20px;
-      cursor: pointer;
-      z-index: 10;
-      user-select: none;
-      border-radius: 5px;
-      box-shadow: 0 2px 6px rgba(0,0,0,0.2);
-    }
-
-    .botao-prev {
-      left: 10px;
-    }
-
-    .botao-next {
-      right: 10px;
-    }
-
-    footer {
-      text-align: center;
-      padding: 20px;
-      background-color: #c0c0c0;
-      font-size: 0.95em;
-      margin-top: 40px;
-    }
-
-    .flipbook .page-corner {
-      display: none !important;
-    }
-
-    .flipbook .shadow,
-    .flipbook .hard {
-      display: none !important;
-    }
-  </style>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Catálogo exclusivo de perfumes de luxo. Élégance et sophistication en un seul flacon">
+  <title>Catálogo de Perfumes Luxuosos</title>
+  <link rel="stylesheet" href="css/style.css">
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
 </head>
 <body>
   <header>
-    <h1>Confira nosso catálogo abaixo</h1>
-    <h2>Élégance et sophistication en un seul flacon</h2>
+    <div class="header-content">
+      <h1>Catálogo Exclusivo</h1>
+      <h2>Élégance et sophistication en un seul flacon</h2>
+      <div class="perfume-icon"><i class="fas fa-spray-can"></i></div>
+    </div>
   </header>
 
-  <div class="catalogo-wrapper">
-    <div class="catalogo flipbook">
-      <div class="pagina">
-        <div class="conteudo">
-          <img src="Perfumes/file.png" alt="Perfume 1" />
-          <div class="texto">
-            <h3>Essence de Paris</h3>
-            <p>Uma fragrância envolvente com notas de jasmim, baunilha e âmbar, perfeita para ocasiões especiais.</p>
-            <p class="preco">R$ 299,90</p>
+  <main class="catalogo-wrapper">
+    <div class="catalogo">
+      <div id="bb-bookblock" class="bb-bookblock">
+        <!-- Página 1 -->
+        <div class="bb-item">
+          <div class="pagina">
+            <div class="conteudo">
+              <div class="perfume-image">
+                <img src="Perfumes/aleef.png" alt="Essence de Paris">
+                <div class="fragrance-notes">
+                  <span>Jasmim</span>
+                  <span>Baunilha</span>
+                  <span>Âmbar</span>
+                </div>
+              </div>
+              <div class="texto">
+                <h3>Essence de Paris</h3>
+                <p>Uma fragrância envolvente que captura a essência da Cidade Luz. Notas florais de jasmim combinam harmoniosamente com a doçura da baunilha e a profundidade do âmbar, criando uma composição perfeita para ocasiões especiais.</p>
+                <div class="preco-container">
+                  <p class="preco">R$ 299,90</p>
+                  <button class="btn-comprar">Adicionar à sacola</button>
+                </div>
+              </div>
+            </div>
           </div>
         </div>
-      </div>
-      <div class="pagina">
-        <div class="conteudo">
-          <img src="Perfumes/sabah.png" alt="Perfume 2" />
-          <div class="texto">
-            <h3>Bois Mystique</h3>
-            <p>Notas amadeiradas profundas com toques de especiarias exóticas. Ideal para noites sofisticadas.</p>
-            <p class="preco">R$ 349,90</p>
+        
+        <!-- Página 2 -->
+        <div class="bb-item">
+          <div class="pagina">
+            <div class="conteudo">
+              <div class="perfume-image">
+                <img src="Perfumes/armaf.png" alt="Bois Mystique">
+                <div class="fragrance-notes">
+                  <span>Sândalo</span>
+                  <span>Pimenta Rosa</span>
+                  <span>Âmbar</span>
+                </div>
+              </div>
+              <div class="texto">
+                <h3>Bois Mystique</h3>
+                <p>Notas amadeiradas profundas de sândalo com toques vibrantes de pimenta rosa e especiarias exóticas. Uma fragrância ousada e sofisticada que evoca mistério e elegância, ideal para noites inesquecíveis.</p>
+                <div class="preco-container">
+                  <p class="preco">R$ 349,90</p>
+                  <button class="btn-comprar">Adicionar à sacola</button>
+                </div>
+              </div>
+            </div>
           </div>
         </div>
-      </div>
-      <div class="pagina">
-        <div class="conteudo">
-          <img src="Perfumes/moto.png" alt="Perfume 3" />
-          <div class="texto">
-            <h3>Jardin Secret</h3>
-            <p>Inspirado nos jardins franceses, com essências florais e frescor cítrico. Delicado e encantador.</p>
-            <p class="preco">R$ 269,90</p>
+
+
+        <!-- Página 2 -->
+        <div class="bb-item">
+            <div class="pagina">
+              <div class="conteudo">
+                <div class="perfume-image">
+                  <img src="Perfumes/armaf.png" alt="Bois Mystique">
+                  <div class="fragrance-notes">
+                    <span>Sândalo</span>
+                    <span>Pimenta Rosa</span>
+                    <span>Âmbar</span>
+                  </div>
+                </div>
+                <div class="texto">
+                  <h3>Bois Mystique</h3>
+                  <p>Notas amadeiradas profundas de sândalo com toques vibrantes de pimenta rosa e especiarias exóticas. Uma fragrância ousada e sofisticada que evoca mistério e elegância, ideal para noites inesquecíveis.</p>
+                  <div class="preco-container">
+                    <p class="preco">R$ 349,90</p>
+                    <button class="btn-comprar">Adicionar à sacola</button>
+                  </div>
+                </div>
+              </div>
+            </div>
           </div>
-        </div>
+        
+        <!-- Adicione mais páginas conforme necessário -->
       </div>
     </div>
-  </div>
 
-  <div class="botao-navegacao botao-prev" onclick="mudarPagina(-1)">←</div>
-  <div class="botao-navegacao botao-next" onclick="mudarPagina(1)">→</div>
+    <nav role="navigation">
+      <button id="bb-nav-prev" aria-label="Página anterior"><i class="fas fa-chevron-left"></i> Anterior</button>
+      <span class="page-counter">1 / 4</span>
+      <button id="bb-nav-next" aria-label="Próxima página">Próxima <i class="fas fa-chevron-right"></i></button>
+    </nav>
+  </main>
 
   <footer>
-    <p>Telefone: (00) 1234-5678 | Email: contato@perfumesluxo.com</p>
-    <p>Where Fragrance Meets Elegance</p>
+    <div class="footer-content">
+      <div class="contact-info">
+        <p><i class="fas fa-phone-alt"></i> (00) 1234-5678</p>
+        <p><i class="fas fa-envelope"></i> contato@perfumesluxo.com</p>
+      </div>
+      <div class="social-links">
+        <a href="#"><i class="fab fa-instagram"></i></a>
+        <a href="#"><i class="fab fa-facebook-f"></i></a>
+        <a href="#"><i class="fab fa-pinterest-p"></i></a>
+      </div>
+      <p class="signature">Where Fragrance Meets Elegance</p>
+    </div>
   </footer>
 
-  <script>
-    const flipbook = $(".flipbook");
-
-    flipbook.turn({
-      width: 1000,
-      height: 650,
-      autoCenter: false,
-      elevation: 50,
-      gradients: false,
-      corners: false
-    });
-
-    // Remover os cantos e efeitos extras
-    setInterval(() => {
-      flipbook.find('.page-corner').remove();
-    }, 500);
-
-    function mudarPagina(offset) {
-      const paginaAtual = flipbook.turn("page");
-      const total = flipbook.turn("pages");
-      const novaPagina = paginaAtual + offset;
-
-      if (novaPagina >= 1 && novaPagina <= total) {
-        flipbook.turn("page", novaPagina);
-      }
-    }
-  </script>
+  <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+  <script src="js/script.js"></script>
 </body>
 </html>
